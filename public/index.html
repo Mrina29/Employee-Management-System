@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+
+        <!-- Login Section -->
+        <div id="loginSection">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required value="admin">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required value="password123">
+                </div>
+                <button type="submit">Login</button>
+                <p id="loginError" class="error-message"></p>
+            </form>
+        </div>
+
+        <!-- Main App Section (hidden initially) -->
+        <div id="appSection" style="display:none;">
+            <div class="header-controls">
+                <p>Welcome, Admin! <button id="logoutBtn">Logout</button></p>
+            </div>
+
+            <!-- Form for Adding/Editing Employees -->
+            <div class="form-container">
+                <h2>Add/Edit Employee</h2>
+                <form id="employeeForm">
+                    <input type="hidden" id="employeeId" name="employeeId">
+                    <div>
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="position">Position:</label>
+                        <input type="text" id="position" name="position" required>
+                    </div>
+                    <button type="submit">Save Employee</button>
+                    <button type="button" id="clearFormBtn" style="display:none;">Cancel Edit</button>
+                    <p id="formError" class="error-message"></p>
+                </form>
+            </div>
+
+            <!-- Employee List -->
+            <div class="list-container">
+                <h2>Employee List</h2>
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeList">
+                        <!-- Employee rows will be inserted here -->
+                    </tbody>
+                </table>
+                <p id="listError" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
